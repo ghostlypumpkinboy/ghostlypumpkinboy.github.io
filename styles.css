@@ -91,3 +91,15 @@ main {
   flex-direction: column;
   align-self: flex-start;
 }
+
+.readable-background {
+  background-color: rgba(256, 256, 256, 0.75);
+}
+
+.date-entries {
+  list-style: none;
+}
+
+.date-entries > li {
+  margin: 1rem;
+}
