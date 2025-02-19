@@ -1,3 +1,57 @@
+:root {
+  --red: #ff0000;
+  --yellow: #ffff00;
+  --blue: #0000ff;
+  --white: #ffffff;
+  --jp-red: #ffccc9;
+  --dark-grey: #2e5339;
+
+  --base-font-size: 16px;
+  --text-scale-2x: 2;
+  --text-scale-xl: 1.8;
+  --text-scale-lg: 1.5;
+  --text-scale-md: 1;
+  --text-scale-sm: 0.8;
+  --text-scale-xs: 0.5;
+
+  --text-2x: calc(var(--base-font-size) * var(--text-scale-2x));
+  --text-xl: calc(var(--base-font-size) * var(--text-scale-xl));
+  --text-lg: calc(var(--base-font-size) * var(--text-scale-lg));
+  --text-md: calc(var(--base-font-size) * var(--text-scale-md));
+  --text-sm: calc(var(--base-font-size) * var(--text-scale-sm));
+  --text-xs: calc(var(--base-font-size) * var(--text-scale-xs));
+
+  --base-line-height: 1.5;
+  --leading-loose: calc(var(--base-line-height) * 1.2);
+  --leading-normal: var(--base-line-height);
+  --leading-tight: calc(var(--base-line-height) * 0.8);
+
+  --space-2xl: 32rem;
+  --space-xl: 24rem;
+  --space-lg: 16rem;
+  --space-md: 12rem;
+  --space-sm: 8rem;
+  --space-xs: 4rem;
+  --space-2xs: 2rem;
+  --space: 1rem;
+}
+
+body {
+  font-size: var(--text-md);
+  line-height: var(--base-line-height);
+}
+
+h1 {
+  font-size: var(--text-2x);
+  line-height: var(--leading-loose);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-loose);
+  font-weight: 400;
+}
 #site-name {
   text-align: center;
 }
@@ -27,6 +81,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .apology {
@@ -89,7 +144,8 @@ main {
 #gallery {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  gap: 4rem;
+  align-items: center;
 }
 
 .readable-background {
@@ -102,4 +158,50 @@ main {
 
 .date-entries > li {
   margin: 1rem;
+}
+
+.music-entries {
+  list-style: none;
+  padding: 0;
+}
+
+.music-entries > li {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-entries {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-entries > li {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  width: 100%;
+}
+
+ul.menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
 }
