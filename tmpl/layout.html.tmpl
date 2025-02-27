@@ -1,11 +1,11 @@
-
+{{ define "layout" }}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Ghostlypumpkinboy.me | It&#39;s Summer vs Winter</title>
+        <title>Ghostlypumpkinboy.me | {{ range $_, $element := .Title }}{{$element}}{{end}}</title>
         <link rel="stylesheet" href="static/css/reset.css">
         <link rel="stylesheet" href="static/css/styles.css">
     </head>
@@ -33,29 +33,20 @@
                 </div>
             </nav>
             <main>
-                
-                
+                {{ $titleLength := len .Title }}
+                {{ if eq $titleLength 1 }}
+                <h1 class="readable-background">{{index .Title 0}}</h1>
+                {{ else }}
                 <div class="split-title">
                     <div class="split-title-row">
-                        <div class="split-title-left"><h1>It&#39;s Summer v</h1></div>
-                        <div class="split-title-right"><h1>s Winter</h1></div>
+                        <div class="split-title-left"><h1>{{ index .Title 0 }}</h1></div>
+                        <div class="split-title-right"><h1>{{ index .Title 1 }}</h1></div>
                     </div>
                 </div>
-                
-                
-<div id="gallery">
-    
-    <img src="static/img/minecraft-inventions.png" width="600px" />
-    
-    <img src="static/img/prison_escape.png" width="600px" />
-    
-    <img src="static/img/sonic-running-downstairs.jpg" width="600px" />
-    
-
-    <a href="update_log.html"><h2 class="apology">Sorry, more later</h2></a>
-</div>
-
+                {{ end }}
+                {{ block "content" .}} Blank {{ end }}
             </main>
         </div>
     </body>
 </html>
+{{ end }}

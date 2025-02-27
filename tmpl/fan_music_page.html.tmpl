@@ -1,0 +1,18 @@
+{{ define "fan_music_page" }}
+{{ block "content" . }}
+<ul class="music-entries readable-background">
+    {{ range .Entries }}
+    <li>
+        <img src="{{ .Img | imagePath }}" width="{{ .Width }}" />
+        <h2>{{ .Title }}</h2>
+        <h3>Track Listing</h3>
+        <ol>
+            {{ range .Tracks }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ol>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}

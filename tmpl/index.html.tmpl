@@ -1,0 +1,11 @@
+{{ define "index" }}
+{{ block "content" .}}
+<div id="gallery">
+    {{ range .Entries }}
+    <img src="{{ .Img | imagePath }}" width="{{ .Width }}" />
+    {{ end }}
+
+    <a href="update_log.html"><h2 class="apology">Sorry, more later</h2></a>
+</div>
+{{ end }}
+{{ end }}

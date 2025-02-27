@@ -1,0 +1,58 @@
+[[entries]]
+date = "Wednesday, Feb 19, 2025"
+  [[entries.entries]]
+  type = "image"
+  img = "sonic-running-downstairs.jpg"
+
+  [[entries.entries]]
+  type = "text"
+  text = "Added menu bar"
+
+  [[entries.entries]]
+  type = "page"
+  page = "fan_music_page.html"
+  text = "Added Fan Music Page"
+
+  [[entries.entries]]
+  type = "text"
+  text = "Added \"Valentine's Day NPCs are Becoming Smart Vinyl\""
+
+  [[entries.entries]]
+  type = "page"
+  page = "game_page.html"
+  text = "Added Game Page"
+
+  [[entries.entries]]
+  type = "text"
+  text = "Added \"Sunny's Arcade\""
+
+  [[entries.entries]]
+  type = "text"
+  text = "Added \"Sunny's Arcade (Nintendo Edition)\""
+
+  [[entries.entries]]
+  type = "text"
+  text = "Added \"It's Summer vs Winter\""
+
+[[entries]]
+date = "Monday, Feb. 17, 2025"
+  [[entries.entries]]
+  type = "page"
+  page = "update_log.html"
+  text = "Added Update Log"
+
+  [[entries.entries]]
+  type = "image"
+  img = "prison_escape.png"
+
+[[entries]]
+date = "Sunday, Feb. 16, 2025"
+
+  [[entries.entries]]
+  type = "text"
+  text = "Started site"
+
+  [[entries.entries]]
+  type = "image"
+  img = "minecraft-inventions.png"
+  

@@ -1,0 +1,24 @@
+{{ define "update_log" }}
+{{ block "content" . }}
+<ul class="date-entries readable-background">
+    {{ range .Entries }}
+    <li>
+        <h2>{{ .Date }}</h2>
+        <ul>
+            {{ range .Entries }}
+            <li>
+            {{ if eq .Type "image" }}
+            <a href="{{ .Img | imagePath }}">+1 picture</a>
+            {{ else if eq .Type "text" }}
+            {{ .Text }}
+            {{ else if eq .Type "page" }}
+            <a href="{{ .Page }}">{{ .Text }}</a>
+            {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}

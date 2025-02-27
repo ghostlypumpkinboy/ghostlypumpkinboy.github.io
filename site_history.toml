@@ -1,0 +1,183 @@
+############### SITE UPDATES ###############
+[[gpb.entries]]
+  type = "created_site"
+  date = 2025-02-16
+  comment = '''
+    Ghostlypumpkinboy expressed a desire to create a website, and I said "I know
+    how to do that!"
+
+    And so here we are!
+    '''
+[gpb.entries.content]
+domain = "ghostlypumpkinboy.me"
+slug = "gpb"
+
+[[gpb.entries]]
+  type = "updated_site"
+  date = 2025-02-19
+  comment = '''
+    The only idea of mine he took: adding a menu bar with links between pages
+    '''
+[gpb.entries.content]
+text = "Added menu bar"
+############### END SITE UPDATES ###############
+
+############### INDEX UPDATES ###############
+[[gpb.entries]]
+  type = "created_page"
+  date = 2025-02-16
+  comment = '''
+    Of course, it all starts with the first page. We decided to go with a gallery
+    on the index page for all of GPB's drawings. People love the "Sorry, more
+    later" link at the bottom
+    '''
+[gpb.entries.content]
+page = "index"
+title = "Gallery"
+
+[[gpb.index.entries]]
+  type = "created_slug"
+  date = 2025-02-16
+  comment = '''
+    The image was described as being his wildest minecraft inventions, but which
+    inventions it actually depicts is as-of-yet undisclosed.
+
+    On a personal note, I had to get these art pieces off of his iPad, and I had a
+    devil of a time getting Ubuntu Noble Server to have a writeable Samba share,
+    but maybe I was misreading the iPad's interface.
+    '''
+[gpb.index.entries.content]
+slug = "minecraft_inventions"
+img = "minecraft-inventions.png"
+width = "600px"
+
+[[gpb.index.entries]]
+  type = "created_slug"
+  date = 2025-02-17
+
+  comment = '''
+    Initially he asked me to help him spell "Escape Prison" he's been doing this
+    thing where when the layout of words doesn't go as he expected, he writes the
+    stuff doesn't fit on the line _above_ the line instead.
+
+    So this one says "Prison Escape". He says that's what he meant to do anyway
+    '''
+[gpb.entries.content]
+slug = "prison_escape"
+img = "prison_escape.png"
+width = "600px"
+
+[[gpb.entries]]
+  type = "updated_page"
+  date = 2025-02-19
+  comment = '''
+    He wanted to point out that the original color scheme was meant to indicate
+    a fire/ice summer/winter vibe
+    '''
+[gb.entries.content]
+page = "index"
+title = ["It's Summer v", "s Winter" ]
+
+[[gpb.index.entries]]
+  type = "created_slug"
+  date = 2025-02-19
+  comment = '''
+    Hand drawn, took a picture with my S24 Ultra and desaturated it to mimic scanning.
+    '''
+[gpb.index.entries.content]
+slug = "sonic_running_downstairs"
+img = "sonic-running-downstairs.jpg"
+width = "600px"
+############### END INDEX UPDATES ###############
+
+############### UPDATE LOG UPDATES ###############
+[[gpb.entries]]
+  type = "created_page"
+  date = 2025-02-17
+  comment = '''
+    The idea for an update log came from GPB independently and very early on. I
+    think he got the idea from video game updates?
+    '''
+[gpb.entries.content]
+page = "update_log"
+title = "Update Log"
+############### END UPDATE LOG UPDATES ###############
+
+############### FAN MUSIC PAGE UPDATES ###############
+[[gpb.entries]]
+  type = "created_page"
+  date = 2025-02-19
+  comment = '''
+    He had this idea that he would have a fan music page, but it would just have
+    album art and track listings. We talked about adding soundcloud or something
+    like that so he could make/post music, but he seems unsure about his ability to
+    record the music he hears in his head still.
+
+    I like it, it reminds of fan websites in the early 2000s before wikis absorbed
+    everything.
+    '''
+[gpb.entries.content]
+page = "fan_music_page"
+title = "Fan Music Page"
+
+[[gpb.fan_music_page.entries]]
+  type = "created_slug"
+  date = 2025-02-19
+  comment = '''
+    This is the first fan music album. It's based on music from the Roblox game
+    "NPCs are Becoming Smart". The cover art depicts "Carl" (right), a
+    robot-voiced NPC from the game, and "Narl" (left), Negative Carl from a
+    surprise negative world in the game.
+
+    I helped him write the text.
+    '''
+[gpb.fan_music_page.entries.content]
+slug = "valentines_npc_vinyl"
+title = "Valentine's Day NPCs are Becoming Smart Vinyl"
+img = "valentines-album-cover.png"
+width = "600px"
+tracks = [
+  "Ending Theme (Valentine's Day Edition)",
+  "Outside Theme (Valentine's Day Edition)",
+  "Reversed (Valentine's Day Edition)",
+]
+############### END FAN MUSIC PAGE UPDATES ###############
+
+############### GAME PAGE UPDATES ###############
+[[gbp.entries]]
+  type = "created_page"
+  date = 2025-02-19
+  comment = '''
+    Initially he just wanted these images in the gallery, but then he decided he
+    wanted them to be part of a new "Game Page"
+    '''
+[gbp.entries.content]
+page = "game_page"
+title = "Game Page"
+
+[[gbp.game_page.entries]]
+  type = "created_slug"
+  date = 2025-02-19
+  comment = '''
+    "Sunny's Arcade", made in a pixel art app
+    '''
+[gbp.game_page.entries.content]
+slug = "sunnys_arcade"
+title = "Sunny's Arcade"
+img = "sunny-arcade.png"
+width = "512px"
+
+[[gbp.game_page.entries]]
+type = "created_slug"
+date = 2025-02-19
+comment = '''
+  "Sunny's Arcade (Nintendo Edition)", I'm not sure what gives him the vibe that
+  this is a "Nintendo Edition" but I've learned not to argue with classifications
+  like this
+  '''
+[gbp.game_page.entries.content]
+slug = "sunnys_arcade_nintendo_edition"
+title = "Sunny's Arcade (Nintendo Edition)"
+img = "sunny-nintendo.png"
+width = "512px"
+############### END GAME PAGE UPDATES ###############

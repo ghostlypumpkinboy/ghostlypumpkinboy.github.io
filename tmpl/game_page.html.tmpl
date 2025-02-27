@@ -1,0 +1,12 @@
+{{ define "game_page" }}
+{{ block "content" .}}
+<ul class="game-entries">
+    {{ range .Entries }}
+    <li class="readable-background">
+        <img src="{{ .Img | imagePath }}" width="600px" />
+        <h2>{{ .Title }}</h2>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}
