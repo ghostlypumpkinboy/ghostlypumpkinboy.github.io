@@ -1,4 +1,14 @@
 [[entries]]
+date = "Thursday, Feb 27, 2025"
+[[entries.entries]]
+  type = "page"
+  page = "prototypes.html"
+  text = "Added Prototypes page"
+[[entries.entries]]
+type = "text"
+text = "Added \"Breaking the Bank Again (Like, Literally)\""
+
+[[entries]]
 date = "Wednesday, Feb 19, 2025"
   [[entries.entries]]
   type = "image"

@@ -18,7 +18,6 @@ type Config struct {
 }
 
 func (config *Config) ParseLayout() error {
-	fmt.Println(config.ResolveTemplatePath("layout"))
 	tmpl, err := template.
 		New("layout").
 		Funcs(config.Helpers()).
@@ -38,6 +37,9 @@ func (config *Config) Helpers() template.FuncMap {
 	return map[string]any {
 		"imagePath": func (imageName string) string {
 			return filepath.Join(config.StaticPath, "img", imageName)
+		},
+		"raw": func (s string) template.HTML {
+			return template.HTML(s)
 		},
 	}
 }
@@ -140,6 +142,34 @@ func (page *UpdateLogPage) TemplateName() string {
 	return "update_log"
 }
 
+type PrototypeEntryType string
+const (
+	PrototypeEntryBook PrototypeEntryType = "book"
+)
+
+type BookPage struct {
+	Img string
+	Text string
+}
+
+type PrototypeEntry struct {
+	Type PrototypeEntryType
+	Title string
+	Pages []BookPage
+}
+
+type PrototypePage struct {
+	Entries []PrototypeEntry
+}
+
+func (page *PrototypePage) Title() []string {
+	return []string { "Prototypes" }	
+}
+
+func (page *PrototypePage) TemplateName() string {
+	return "prototypes"
+}
+
 func getTemplateByName(config Config, name string) (string, error) {
 	finalPath := config.ResolveTemplatePath(name)
 	content, err := os.ReadFile(finalPath)
@@ -185,6 +215,7 @@ func renderPage(config Config, page Page) (string, error) {
 			 &UpdateLogPage{},
 			 &FanMusicPage{},
 			 &GamePage{},
+			 &PrototypePage{},
 		 },
 	 }
 
