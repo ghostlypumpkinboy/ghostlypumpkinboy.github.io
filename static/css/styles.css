@@ -41,17 +41,6 @@ body {
   line-height: var(--base-line-height);
 }
 
-h1 {
-  font-size: var(--text-2x);
-  line-height: var(--leading-loose);
-  font-weight: 400;
-}
-
-h2 {
-  font-size: var(--text-xl);
-  line-height: var(--leading-loose);
-  font-weight: 400;
-}
 #site-name {
   text-align: center;
 }
