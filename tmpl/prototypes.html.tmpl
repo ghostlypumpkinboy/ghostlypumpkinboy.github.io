@@ -7,7 +7,7 @@
     {{  range .Pages }}
     <li>
        <div class="page readable-background"> 
-        <img src="{{.Img | imagePath}}" width="500px" />
+        <img src="{{.Img | imagePath}}" />
         <h2 class="page-text">{{ .Text | raw }}</h2>
        </div>
     </li>
