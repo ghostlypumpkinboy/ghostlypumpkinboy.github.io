@@ -217,6 +217,19 @@ func (alias *AliasPage) Aliases() []AliasPage {
 	return []AliasPage {}
 }
 
+type AboutMePage struct {}
+func (aboutMe *AboutMePage) Title() []string {
+	return []string { "About Me" }
+}
+
+func(aboutMe *AboutMePage) TemplateName() string {
+	return "about_me"
+}
+
+func (aboutMe *AboutMePage) Aliases() []AliasPage {
+	return []AliasPage {}
+}
+
 func getTemplateByName(config Config, name string) (string, error) {
 	finalPath := config.ResolveTemplatePath(name)
 	content, err := os.ReadFile(finalPath)
@@ -276,6 +289,7 @@ func renderAliasPage(config Config, alias string) (string, error) {
 			 &FanMusicPage{},
 			 &GamePage{},
 			 &HenryBooksPage{},
+			 &AboutMePage{},
 		 },
 	 }
 
