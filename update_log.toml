@@ -2,17 +2,22 @@
 date = "Saturday, Mar 01, 2025"
 [[entries.entries]]
    type = "page"
-   page = "henry_books.html"
+   page = "henry_books"
    text = "Renamed \"Prototypes\" to \"Henry Books\""
 [[entries.entries]]
 type = "text"
 text = "Added \"What happens if you dig straight down\""
 
+[[entries.entries]]
+type = "page"
+page = "about-me"
+text = "Added \"About Me\""
+
 [[entries]]
 date = "Thursday, Feb 27, 2025"
 [[entries.entries]]
   type = "page"
-  page = "prototypes.html"
+  page = "prototypes"
   text = "Added Prototypes page"
 [[entries.entries]]
 type = "text"
@@ -30,7 +35,7 @@ date = "Wednesday, Feb 19, 2025"
 
   [[entries.entries]]
   type = "page"
-  page = "fan_music_page.html"
+  page = "fan_music_page"
   text = "Added Fan Music Page"
 
   [[entries.entries]]
@@ -39,7 +44,7 @@ date = "Wednesday, Feb 19, 2025"
 
   [[entries.entries]]
   type = "page"
-  page = "game_page.html"
+  page = "game_page"
   text = "Added Game Page"
 
   [[entries.entries]]
@@ -58,7 +63,7 @@ date = "Wednesday, Feb 19, 2025"
 date = "Monday, Feb. 17, 2025"
   [[entries.entries]]
   type = "page"
-  page = "update_log.html"
+  page = "update_log"
   text = "Added Update Log"
 
   [[entries.entries]]

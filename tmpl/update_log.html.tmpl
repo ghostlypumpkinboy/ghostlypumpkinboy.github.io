@@ -12,7 +12,7 @@
             {{ else if eq .Type "text" }}
             {{ .Text }}
             {{ else if eq .Type "page" }}
-            <a href="{{ .Page }}">{{ .Text }}</a>
+            <a href="{{ .Page | pagePath }}">{{ .Text }}</a>
             {{ end }}
             </li>
             {{ end }}

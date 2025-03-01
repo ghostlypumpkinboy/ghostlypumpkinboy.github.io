@@ -217,7 +217,14 @@ func (alias *AliasPage) Aliases() []AliasPage {
 	return []AliasPage {}
 }
 
-type AboutMePage struct {}
+type AboutMePageEntry struct {
+	Text string
+}
+
+type AboutMePage struct {
+	Entries []AboutMePageEntry
+}
+
 func (aboutMe *AboutMePage) Title() []string {
 	return []string { "About Me" }
 }
