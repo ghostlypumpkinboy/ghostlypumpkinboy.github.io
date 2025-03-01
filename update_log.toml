@@ -1,4 +1,14 @@
 [[entries]]
+date = "Saturday, Mar 01, 2025"
+[[entries.entries]]
+   type = "page"
+   page = "henry_books.html"
+   text = "Renamed \"Prototypes\" to \"Henry Books\""
+[[entries.entries]]
+type = "text"
+text = "Added \"What happens if you dig straight down\""
+
+[[entries]]
 date = "Thursday, Feb 27, 2025"
 [[entries.entries]]
   type = "page"

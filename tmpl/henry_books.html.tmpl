@@ -1,0 +1,17 @@
+{{ define "prototypes"}}
+{{ block "content" .}}
+{{  range .Entries }}
+<h2>{{ .Title }}</h2>
+<ul class="book">
+    {{  range .Pages }}
+    <li>
+       <div class="page readable-background"> 
+        <img src="{{.Img | imagePath}}" />
+        <h2 class="page-text">{{ .Text | raw }}</h2>
+       </div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}
+{{ end }}

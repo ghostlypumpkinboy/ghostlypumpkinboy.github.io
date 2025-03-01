@@ -1,0 +1,5 @@
+{{ block "meta_extra" .}}
+<meta http-equiv="refresh" content="0;url={{ .To | pagePath }}" />
+<link rel="canonical" href="url={{ .To | pagePath}}" />
+{{ end }}
+{{ block "content" . }}<span class="readable-text">Redirecting...</span>{{ end }}

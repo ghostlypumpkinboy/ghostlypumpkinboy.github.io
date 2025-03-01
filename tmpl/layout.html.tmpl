@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Ghostlypumpkinboy.me | {{ range $_, $element := .Title }}{{$element}}{{end}}</title>
+        {{ block "meta_extra" . }}{{ end }}
         <link rel="stylesheet" href="static/css/reset.css">
         <link rel="stylesheet" href="static/css/styles.css">
     </head>
@@ -29,7 +30,7 @@
                         <li><a href="update_log.html">Update Log</a></li>
                         <li><a href="fan_music_page.html">Fan Music Page</a></li>
                         <li><a href="game_page.html">Game Page</a></li>
-                        <li><a href="prototypes.html">Prototypes</a></li>
+                        <li><a href="henry_books.html">Henry Books</a></li>
                     </ul>
                 </div>
             </nav>

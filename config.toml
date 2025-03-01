@@ -1,2 +1,3 @@
-StaticPath = "static"
-TemplatePath = "tmpl"
+staticPath = "static"
+templatePath = "tmpl"
+domain = "www.ghostlypumpkinboy.me"

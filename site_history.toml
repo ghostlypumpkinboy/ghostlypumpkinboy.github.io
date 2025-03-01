@@ -1,4 +1,5 @@
-############### SITE UPDATES ###############
+[gpb]
+
 [[gpb.entries]]
   type = "created_site"
   date = 2025-02-16
@@ -12,17 +13,6 @@
 domain = "ghostlypumpkinboy.me"
 slug = "gpb"
 
-[[gpb.entries]]
-  type = "updated_site"
-  date = 2025-02-19
-  comment = '''
-    The only idea of mine he took: adding a menu bar with links between pages
-    '''
-[gpb.entries.content]
-text = "Added menu bar"
-############### END SITE UPDATES ###############
-
-############### INDEX UPDATES ###############
 [[gpb.entries]]
   type = "created_page"
   date = 2025-02-16
@@ -62,10 +52,30 @@ width = "600px"
 
     So this one says "Prison Escape". He says that's what he meant to do anyway
     '''
-[gpb.entries.content]
+[gpb.index.entries.content]
 slug = "prison_escape"
 img = "prison_escape.png"
 width = "600px"
+
+[[gpb.entries]]
+  type = "created_page"
+  date = 2025-02-17
+  comment = '''
+    The idea for an update log came from GPB independently and very early on. I
+    think he got the idea from video game updates?
+    '''
+[gpb.entries.content]
+page = "update_log"
+title = "Update Log"
+
+[[gpb.entries]]
+  type = "updated_site"
+  date = 2025-02-19
+  comment = '''
+    The only idea of mine he took: adding a menu bar with links between pages
+    '''
+[gpb.entries.content]
+text = "Added menu bar"
 
 [[gpb.entries]]
   type = "updated_page"
@@ -74,7 +84,7 @@ width = "600px"
     He wanted to point out that the original color scheme was meant to indicate
     a fire/ice summer/winter vibe
     '''
-[gb.entries.content]
+[gpb.entries.content]
 page = "index"
 title = ["It's Summer v", "s Winter" ]
 
@@ -88,22 +98,8 @@ title = ["It's Summer v", "s Winter" ]
 slug = "sonic_running_downstairs"
 img = "sonic-running-downstairs.jpg"
 width = "600px"
-############### END INDEX UPDATES ###############
 
-############### UPDATE LOG UPDATES ###############
-[[gpb.entries]]
-  type = "created_page"
-  date = 2025-02-17
-  comment = '''
-    The idea for an update log came from GPB independently and very early on. I
-    think he got the idea from video game updates?
-    '''
-[gpb.entries.content]
-page = "update_log"
-title = "Update Log"
-############### END UPDATE LOG UPDATES ###############
 
-############### FAN MUSIC PAGE UPDATES ###############
 [[gpb.entries]]
   type = "created_page"
   date = 2025-02-19
@@ -141,43 +137,236 @@ tracks = [
   "Outside Theme (Valentine's Day Edition)",
   "Reversed (Valentine's Day Edition)",
 ]
-############### END FAN MUSIC PAGE UPDATES ###############
 
-############### GAME PAGE UPDATES ###############
-[[gbp.entries]]
+
+[[gpb.entries]]
   type = "created_page"
   date = 2025-02-19
   comment = '''
     Initially he just wanted these images in the gallery, but then he decided he
     wanted them to be part of a new "Game Page"
     '''
-[gbp.entries.content]
+[gpb.entries.content]
 page = "game_page"
 title = "Game Page"
 
-[[gbp.game_page.entries]]
+[[gpb.game_page.entries]]
   type = "created_slug"
   date = 2025-02-19
   comment = '''
     "Sunny's Arcade", made in a pixel art app
     '''
-[gbp.game_page.entries.content]
+[gpb.game_page.entries.content]
 slug = "sunnys_arcade"
 title = "Sunny's Arcade"
 img = "sunny-arcade.png"
 width = "512px"
 
-[[gbp.game_page.entries]]
-type = "created_slug"
-date = 2025-02-19
-comment = '''
-  "Sunny's Arcade (Nintendo Edition)", I'm not sure what gives him the vibe that
-  this is a "Nintendo Edition" but I've learned not to argue with classifications
-  like this
-  '''
-[gbp.game_page.entries.content]
+[[gpb.game_page.entries]]
+  type = "created_slug"
+  date = 2025-02-19
+  comment = '''
+    "Sunny's Arcade (Nintendo Edition)", I'm not sure what gives him the vibe that
+    this is a "Nintendo Edition" but I've learned not to argue with classifications
+    like this
+    '''
+[gpb.game_page.entries.content]
 slug = "sunnys_arcade_nintendo_edition"
 title = "Sunny's Arcade (Nintendo Edition)"
 img = "sunny-nintendo.png"
 width = "512px"
-############### END GAME PAGE UPDATES ###############
+
+[[gpb.entries]]
+type = "created_page"
+date = 2025-02-27
+comment = '''
+  This is the first time I use my inflence to suggest something he didn't want
+  at first. He made this book at school and he wanted to make it into an
+  animation first before posting it. Keeping in mind the likelihood such an
+  animation would ever be finished, I convinced him to the idea of having a
+  "prototypes" page we post the book to first.
+  '''
+[gpb.entries.content]
+page = "prototypes"
+title = "Prototypes"
+
+[[gpb.prototypes.entries]]
+type = "created_slug"
+date = 2025-02-27
+comment = '''
+  "Breaking the Bank Again (Like, Literally)" is based on a video game called
+  "Henry Stickmin", where a stickman named Henry breaks into a heavily guarded
+  area to steal a diamond. It is best classified as a "Clickamajig" crossed with
+  a choose-your-own-adventure.
+'''
+
+[gpb.prototypes.entries.content]
+slug = "btba"
+title = "Breaking the Bank Again (Like, Literally)"
+type = "book"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-00"
+type = "page"
+img = "book/00.jpg"
+text = ""
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-01"
+type = "page"
+img = "book/01.jpg"
+text = '''
+Henry got the diamond tooken away because of stealing it. And he knew that they
+took it to the bank. 
+'''
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-02"
+type = "page"
+img = "book/02.jpg"
+text = '''
+
+Henry has to make some choices and use two things to smash down the wall of the
+bank.
+
+'''
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-03"
+type = "page"
+img = "book/03.jpg"
+text = '''
+
+Henry chose the pickaxe
+
+'''
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-04"
+type = "page"
+img = "book/04.jpg"
+text = '''
+
+He mines...
+
+'''
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-05"
+type = "page"
+img = "book/05.jpg"
+text = '''
+
+And he mi...
+<br />
+<i>Hssssss</i>
+<br />
+BOOM!
+<br />
+A creeper exploded!
+
+'''
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-06"
+type = "page"
+img = "book/06.jpg"
+text = "But that wasn't bad because the creeper didn't take much damage. <br /> And he landed right on the diamond case and the diamond case cracked!"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-07"
+type = "page"
+img = "book/07.jpg"
+text = "And he got the diamond"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-08"
+type = "page"
+img = "book/08.jpg"
+text = "But then the police ran after him"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-09"
+type = "page"
+img = "book/09.jpg"
+text = "But then he ran into a cliff and fell off!"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-10"
+type = "page"
+img = "book/10.jpg"
+text = "But that wasn't bad because the diamond wasn't broken!"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-11"
+type = "page"
+img = "book/11.jpg"
+text = "And he got it back"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-12"
+type = "page"
+img = "book/12.jpg"
+text = "The End"
+
+[[gpb.prototypes.btba.entries]]
+type = "created_slug"
+date = 2025-02-27
+
+[gpb.prototypes.btba.entries.content]
+slug = "btba-13"
+type = "page"
+img = "book/13.jpg"
+text = ""

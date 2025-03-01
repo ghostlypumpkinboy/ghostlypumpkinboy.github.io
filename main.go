@@ -13,6 +13,7 @@ import (
 type Config struct {
 	StaticPath string
 	TemplatePath string
+	Domain string
 	Pages []Page
 	Layout template.Template
 }
@@ -41,6 +42,9 @@ func (config *Config) Helpers() template.FuncMap {
 		"raw": func (s string) template.HTML {
 			return template.HTML(s)
 		},
+		"pagePath": func (s string) string {
+			return "https://" + config.Domain + "/" + s + ".html"
+		},
 	}
 }
 
@@ -51,6 +55,7 @@ func (config *Config) ResolveTemplatePath(name string) string {
 type Page interface {
 	TemplateName() string
 	Title() []string
+	Aliases() []AliasPage
 }
 
 type GamePageEntry struct {
@@ -68,6 +73,10 @@ func (page *GamePage) Title() []string {
 
 func (page *GamePage) TemplateName() string {
 	return "game_page"
+}
+
+func (page *GamePage) Aliases() []AliasPage {
+	return []AliasPage {}
 }
 
 type IndexPageEntry struct {
@@ -90,6 +99,15 @@ func (page *IndexPage) TemplateName() string {
 	return "index"
 }
 
+func (page *IndexPage) Aliases() []AliasPage {
+	return []AliasPage {
+		{
+			From: "gallery",
+			To: page.TemplateName(),
+		},
+	}
+}
+
 type FanMusicPageEntry struct {
 	Title string
 	Img string
@@ -108,6 +126,10 @@ func (page *FanMusicPage) Title() []string {
 
 func (page *FanMusicPage) TemplateName() string {
 	return "fan_music_page"
+}
+
+func (page *FanMusicPage) Aliases() []AliasPage {
+	return []AliasPage {}
 }
 
 type UpdateEntryType string
@@ -142,32 +164,57 @@ func (page *UpdateLogPage) TemplateName() string {
 	return "update_log"
 }
 
-type PrototypeEntryType string
-const (
-	PrototypeEntryBook PrototypeEntryType = "book"
-)
+func (page *UpdateLogPage) Aliases() []AliasPage {
+	return []AliasPage {}
+}
 
-type BookPage struct {
+type HenryBookPage struct {
 	Img string
 	Text string
 }
 
-type PrototypeEntry struct {
-	Type PrototypeEntryType
+type HenryBooksEntry struct {
 	Title string
-	Pages []BookPage
+	Pages []HenryBookPage
 }
 
-type PrototypePage struct {
-	Entries []PrototypeEntry
+type HenryBooksPage struct {
+	Entries []HenryBooksEntry
 }
 
-func (page *PrototypePage) Title() []string {
-	return []string { "Prototypes" }	
+func (page *HenryBooksPage) Title() []string {
+	return []string { "Henry Books" }	
 }
 
-func (page *PrototypePage) TemplateName() string {
-	return "prototypes"
+func (page *HenryBooksPage) TemplateName() string {
+	return "henry_books"
+}
+
+func (page *HenryBooksPage) Aliases() []AliasPage {
+	return []AliasPage {
+		{
+			From: "prototypes",
+			To: page.TemplateName(),
+		},
+	}
+}
+
+type AliasPage struct {
+	From string
+	To string
+}
+
+
+func (alias *AliasPage) Title() []string {
+	return []string { alias.From }
+}
+
+func (alias *AliasPage) TemplateName() string {
+	return "alias"
+}
+
+func (alias *AliasPage) Aliases() []AliasPage {
+	return []AliasPage {}
 }
 
 func getTemplateByName(config Config, name string) (string, error) {
@@ -182,7 +229,7 @@ func getTemplateByName(config Config, name string) (string, error) {
 
 func renderPage(config Config, page Page) (string, error) {
 	builder := strings.Builder{}
-	tmpl := template.Must(template.Must(config.Layout.Clone()). ParseFiles(config.ResolveTemplatePath(page.TemplateName())))
+	tmpl := template.Must(template.Must(config.Layout.Clone()).ParseFiles(config.ResolveTemplatePath(page.TemplateName())))
 
 	err := tmpl.Execute(&builder, page)
 
@@ -193,6 +240,19 @@ func renderPage(config Config, page Page) (string, error) {
 	 return builder.String(), nil
  }
 
+func renderAliasPage(config Config, alias string) (string, error) {
+	builder := strings.Builder{}
+	tmpl := template.Must(template.Must(config.Layout.Clone()).ParseFiles(config.ResolveTemplatePath("alias")))
+
+	err := tmpl.Execute(&builder, alias)
+
+	if err != nil {
+		return "", err
+	}
+
+	return builder.String(), nil
+}
+ 
  func parseConfig(config Page) error {
 	 configContent, err := os.ReadFile(config.TemplateName() + ".toml")
 	 if err != nil {
@@ -215,7 +275,7 @@ func renderPage(config Config, page Page) (string, error) {
 			 &UpdateLogPage{},
 			 &FanMusicPage{},
 			 &GamePage{},
-			 &PrototypePage{},
+			 &HenryBooksPage{},
 		 },
 	 }
 
@@ -249,11 +309,31 @@ func renderPage(config Config, page Page) (string, error) {
 
 		content, err := renderPage(config, page)
 
-		if (err != nil) {
+		if err != nil {
 			fmt.Printf("Abort: Couldn't render %s %s\n", page.Title(), err)
 			return
 		}
 
 		 err = os.WriteFile(page.TemplateName() + ".html", []byte(content), 0666)
+
+		 if err != nil {
+			 fmt.Printf("Abort: Couldn't write file for page %s %s\n", page.TemplateName(), err)
+			 return
+		 }
+		 
+		 for _, alias := range page.Aliases() {
+			 aliasContent, err := renderPage(config, &alias)
+			 if err != nil {
+				 fmt.Printf("Abort: Couldn't render alias page %s for %s  %s\n", alias, page.Title(), err)
+				 return
+			 }
+
+			 err = os.WriteFile(alias.From + ".html", []byte(aliasContent), 0666)
+
+			 if err != nil {
+				 fmt.Printf("Abort: Couldn't write file for alias page %s for %s %s\n", alias, page.TemplateName(), err)
+				 return
+			 }
+		 }
 	}
 }
